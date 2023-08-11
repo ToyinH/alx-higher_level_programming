@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def main():
     from sys import exit, argv
-    import calculator_1
+    from calculator_1 import add, sub, mul, div
     
     # handling wrong number of arguments for the calculation
     element = len(argv)
@@ -26,8 +26,8 @@ def main():
             }
     operator = argv[2]
     if operator in operator_dic:
-        result = operator_dic[operator]
-        print("{} {} {} = {}".format(a, operator, b, result(a, b)))
+        result = operator_dic[operator](a,b)
+        print("{} {} {} = {}".format(a, operator, b, result))
 
 
 if __name__ == "__main__":
