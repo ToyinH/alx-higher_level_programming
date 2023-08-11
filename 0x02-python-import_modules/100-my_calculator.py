@@ -2,7 +2,7 @@
 def main():
     from sys import exit, argv
     from calculator_1 import add, sub, mul, div
-    
+
     # handling wrong number of arguments for the calculation
     element = len(argv)
     if not element == 4:
@@ -26,7 +26,7 @@ def main():
             }
     operator = argv[2]
     if operator in operator_dic:
-        result = operator_dic[operator](a,b)
+        result = operator_dic[operator](a, b)
         print("{} {} {} = {}".format(a, operator, b, result))
 
 
