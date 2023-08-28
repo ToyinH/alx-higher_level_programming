@@ -10,6 +10,6 @@ def safe_print_list(my_list=[], x=0):
                 break
         print()
     except IndexError:
-        pass    
+        pass
     else:
         return count
