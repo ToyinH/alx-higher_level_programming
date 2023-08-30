@@ -49,7 +49,7 @@ class Square:
         x, y = value
         if not isinstance(x, int) or not isinstance(y, int) or x < 0 or y < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value;
+        self.__position = value
 
     def my_print(self):
         """
