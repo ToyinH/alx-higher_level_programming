@@ -26,8 +26,12 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         print_rect = ""
+        if hasattr(self, 'print_symbol'):
+            symbol = self.print_symbol
+        else:
+            symbol = Rectangle.print_symbol
         for _ in range(self.__height):
-            print_rect += (Rectangle.print_symbol * self.__width + "\n")
+            print_rect += str(symbol) * self.__width + "\n"
         return print_rect[:-1]
 
     def __repr__(self):
