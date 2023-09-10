@@ -5,10 +5,7 @@ Divide Matrix Module
 # It also checks for possilbe edge cases
 
 >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
->>> matrix = [
-	[1, 2],
-	[3, 4]
-	]
+>>> matrix = [[1, 2], [3, 4]]
 >>> matrix_divided(matrix, 3)
 [[0.33, 0.67], [1.0, 1.33]]
 
