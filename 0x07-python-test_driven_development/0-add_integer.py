@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-module to add two integers
+Module to add two integers.
+The float is typecasted to an integer before the addition
 """
 
 
