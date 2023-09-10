@@ -13,5 +13,8 @@ Divide Matrix Module
 [[0.33, 0.67], [1.0, 1.33]]
 
 >>> matrix_divided(matrix, "3")
-raise TypeError("div must be a number")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 10, in matrix_divided
+    raise TypeError("div must be a number")
 TypeError: div must be a number
