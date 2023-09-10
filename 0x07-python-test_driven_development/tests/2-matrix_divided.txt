@@ -21,3 +21,9 @@ TypeError: div must be a number
 /2-matrix_divided.py", line 15, in matrix_divided
     raise TypeError("matrix must be a matrix (list of lists) "
 TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[1, 2], [3, 4]]
+>>> matrix_divided(matrix, 0)
+/2-matrix_divided.py", line 12, in matrix_divided
+    raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
