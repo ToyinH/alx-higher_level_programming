@@ -18,3 +18,9 @@ Traceback (most recent call last):
   File "/home/vagrant/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 10, in matrix_divided
     raise TypeError("div must be a number")
 TypeError: div must be a number
+
+>>> matrix = [[]]
+>>> matrix_divided(matrix, 1)
+/2-matrix_divided.py", line 15, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) "
+TypeError: matrix must be a matrix (list of lists) of integers/floats
