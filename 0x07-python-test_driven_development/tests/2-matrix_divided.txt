@@ -1,2 +1,17 @@
 Divide Matrix Module
 ====================
+# A function that divides the elements of a matrix and return
+# a new matrix with the result to 2 decimal places
+# It also checks for possilbe edge cases
+
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+>>> matrix = [
+	[1, 2],
+	[3, 4]
+	]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67], [1.0, 1.33]]
+
+>>> matrix_divided(matrix, "3")
+raise TypeError("div must be a number")
+TypeError: div must be a number
