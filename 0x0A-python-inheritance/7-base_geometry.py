@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""An empty class BaseGeometry"""
+"""A class BaseGeometry."""
 
 
 class BaseGeometry:
-    """an empty class"""
+    """an empty class.
+    Class which validates value."""
     def area(self):
-        """finding the area"""
+        """finding the area.
+        Raise exception for the area
+        """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
@@ -16,6 +19,8 @@ class BaseGeometry:
         Raises:
             TypeError: if value is not an integer
             ValueError: if value is less than or equal to 0"""
+        if type(name) is not str:
+            raise TypeError
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
