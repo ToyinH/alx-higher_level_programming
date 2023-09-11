@@ -36,3 +36,6 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 'name'
 >>> my_list.print_sorted()
 [-3, -2.0, 0, 1, 2.0, 4]
+>>> my_list.append(float('inf'))
+>>> my_list.print_sorted()
+[-3, -2.0, 0, 1, 2.0, 4, inf]
