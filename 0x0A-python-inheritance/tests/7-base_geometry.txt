@@ -10,46 +10,89 @@ Importing class from the module:
 	>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 	>>> bg = BaseGeometry()
 
-Finding the area
+Trying to find the area
 	>>> bg.area()
 	Traceback (most recent call last):
 		...
 	Exception: area() is not implemented
 
->>> bg.integer_validator("width", 12)
->>> bg.integer_validator("width", 0)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/vagrant/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 16, in integer_validator
-    raise ValueError("{:s} must be greater than 0".format(name))
-ValueError: width must be greater than 0
->>> bg.integer_validator("width", -2)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/vagrant/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 16, in integer_validator
-    raise ValueError("{:s} must be greater than 0".format(name))
-ValueError: width must be greater than 0
->>> bg.integer_validator("width", 2.0)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/vagrant/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 14, in integer_validator
-    raise TypeError("{:s} must be an integer".format(name))
-TypeError: width must be an integer
->>> bg.integer_validator("width", -2.0)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/vagrant/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 14, in integer_validator
-    raise TypeError("{:s} must be an integer".format(name))
-TypeError: width must be an integer
->>> bg.integer_validator("width", "one")
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/vagrant/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 14, in integer_validator
-    raise TypeError("{:s} must be an integer".format(name))
-TypeError: width must be an integer
->>> bg.integer_validator("width", float('inf'))
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/vagrant/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 14, in integer_validator
-    raise TypeError("{:s} must be an integer".format(name))
-TypeError: width must be an integer
+Trying to validate an integer
+	>>> bg.integer_validator("width", 12)
+
+Trying to validate the value 0
+	>>> bg.integer_validator("width", 0)
+	Traceback (most recent call last):
+	...
+	ValueError: width must be greater than 0
+
+Trying to pass a negative integer
+	>>> bg.integer_validator("width", -2)
+	Traceback (most recent call last):
+	...
+	ValueError: width must be greater than 0
+
+Trying to pass a float
+	>>> bg.integer_validator("width", 2.0)
+	Traceback (most recent call last):
+  	...
+	TypeError: width must be an integer
+
+Trying to pass a negative float
+	>>> bg.integer_validator("width", -2.0)
+	Traceback (most recent call last):
+	...
+  	TypeError: width must be an integer
+
+Trying to pass a string
+	>>> bg.integer_validator("width", "one")
+	Traceback (most recent call last):
+  	...
+	TypeError: width must be an integer
+
+Trying to pass an infinite num
+	>>> bg.integer_validator("width", float('inf'))
+	Traceback (most recent call last):
+  	...
+	TypeError: width must be an integer
+
+Trying to pass an empty argument
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Trying to pass the name without value to validate
+	>>> bg.integer_validator("width")
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+Trying to pass a tuple
+	>>> bg.integer_validator("width", (4, ))
+	Traceback (most recent call last):
+	...
+	TypeError: width must be an integer
+
+Trying to pass a list
+	>>> bg.integer_validator("width", [2, 3])
+	Traceback (most recent call last):
+        ...
+        TypeError: width must be an integer
+
+Trying to pass a dictionary
+	bg.integer_validator("width", {2, 3})
+	Traceback (most recent call last):
+        ...
+        TypeError: width must be an integer
+
+Trying to pass True
+	>>> bg.integer_validator("width", True)
+	Traceback (most recent call last):
+        ...
+        TypeError: width must be an integer
+
+Trying to pass None
+	>>> bg.integer_validator("width", None)
+	Traceback (most recent call last):
+        ...
+        TypeError: width must be an integer
