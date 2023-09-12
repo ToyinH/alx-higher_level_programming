@@ -42,8 +42,39 @@ Trying to pass a negative float
 	Traceback (most recent call last):
 	...
   	TypeError: width must be an integer
-Trying to pass a string
-        >>> bg.integer_validator("width", "one")
+
+Trying to pass an infinite num
+        >>> bg.integer_validator("width", float('inf'))
+        Traceback (most recent call last):
+        ...
+        TypeError: width must be an integer
+
+Trying to pass the name without value to validate
+        >>> bg.integer_validator("width")
+        Traceback (most recent call last):
+        ...
+        TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+Trying to pass a tuple
+        >>> bg.integer_validator("width", (4, ))
+        Traceback (most recent call last):
+        ...
+        TypeError: width must be an integer
+
+Trying to pass a list
+        >>> bg.integer_validator("width", [2, 3])
+        Traceback (most recent call last):
+        ...
+        TypeError: width must be an integer
+
+Trying to pass a dictionary
+        bg.integer_validator("width", {2, 3})
+        Traceback (most recent call last):
+        ...
+        TypeError: width must be an integer
+
+Trying to pass True
+        >>> bg.integer_validator("width", True)
         Traceback (most recent call last):
         ...
         TypeError: width must be an integer
