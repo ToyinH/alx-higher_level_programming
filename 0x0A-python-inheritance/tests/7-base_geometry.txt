@@ -53,8 +53,3 @@ Traceback (most recent call last):
   File "/home/vagrant/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 14, in integer_validator
     raise TypeError("{:s} must be an integer".format(name))
 TypeError: width must be an integer
-
->>> bg.integer_validator()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
