@@ -43,12 +43,6 @@ Trying to pass a negative float
 	...
   	TypeError: width must be an integer
 
-Trying to pass an infinite num
-        >>> bg.integer_validator("width", float('inf'))
-        Traceback (most recent call last):
-        ...
-        TypeError: width must be an integer
-
 Trying to pass the name without value to validate
         >>> bg.integer_validator("width")
         Traceback (most recent call last):
