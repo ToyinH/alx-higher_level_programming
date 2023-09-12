@@ -3,7 +3,6 @@
 returns the number of characters written"""
 
 
-
 def write_file(filename="", text=""):
     """function that writes a string in filename to a text file, text
     and returns the number of characters written"""
