@@ -73,3 +73,9 @@ Trying to pass None
         Traceback (most recent call last):
         ...
         TypeError: width must be an integer
+
+Trying to pass a string
+	>>> bg.integer_validator("width", "4")
+	Traceback (most recent call last):
+        ...
+        TypeError: width must be an integer
