@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A class MyInt which inherits from int and reverse the operation
+"""A class MyInt which inherits from int and switch the operation
 of == and !="""
 
 
