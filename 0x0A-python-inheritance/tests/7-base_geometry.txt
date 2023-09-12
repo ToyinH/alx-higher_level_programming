@@ -85,3 +85,9 @@ Trying to pass a set
 	Traceback (most recent call last):
         ...
         TypeError: width must be an integer
+
+Trying without any argument
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
