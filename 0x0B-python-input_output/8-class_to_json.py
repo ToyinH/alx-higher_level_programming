@@ -11,12 +11,11 @@ def class_to_json(obj):
     """The function that return the dictionary description of obj. All
     attributes of the obj Class are serializable."""
     json_dict = {}
-    attributes = vars(obj)
-    print(attributes)
+    attributes = dir(obj)
     for attribute_name in attributes:
         if attribute_name.startswith("__"):
             continue
-        attribute_value = attributes[attribute_name]
+        attribute_value = getattr(obj, attribute_name)
         if isinstance(attribute_value, (list, dict, str, int, bool)):
             json_dict[attribute_name] = attribute_value
     return json_dict
