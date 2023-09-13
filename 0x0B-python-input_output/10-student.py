@@ -25,6 +25,7 @@ class Student:
                     "age": self.age
                     }
         else:
+            json_dict = {}
             for attribute_name in attrs:
                 if hasattr(self, attribute_name):
                     json_dict[attribute_name] = getattr(self, attribute_name)
