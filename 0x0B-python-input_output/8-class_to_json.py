@@ -16,7 +16,7 @@ def class_to_json(obj):
     # vars() return dictionary of the obj properties
     attributes = dir(obj)
     for attribute_name in attributes:
-        # skip non-serializable attribute
+        # skip private attributes
         if attribute_name.startswith("__"):
             continue
         # get the value of the attribute from the list
