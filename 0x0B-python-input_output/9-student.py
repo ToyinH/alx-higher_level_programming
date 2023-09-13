@@ -2,7 +2,6 @@
 """A class Student that defines a student by first_name, last_name
 and age. Include a method that retrieves a dictionary representation of a
 Student instance sames as 8-class_to_json.py"""
-class_to_json = __import__("8-class_to_json").class_to_json
 
 
 class Student:
@@ -18,4 +17,9 @@ class Student:
     def to_json(self):
         """method that retrieves a dictionary representation of a
         Student instance."""
-        return class_to_json(self)
+        json_dict = {
+                "first_name": self.first_name,
+                "last_name": self.last_name,
+                "age": self.age
+                }
+        return json_dict
