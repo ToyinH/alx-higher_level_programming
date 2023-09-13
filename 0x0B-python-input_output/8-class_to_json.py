@@ -16,5 +16,6 @@ def class_to_json(obj):
         if attribute_name.startswith("_"):
             continue
         attribute_value = getattr(obj, attribute_name)
-        json_dict[attribute_name] = attribute_value
+        if isinstance(attribute_value, (list, dict, str, int, bool)):
+            json_dict[attribute_name] = attribute_value
     return json_dict
