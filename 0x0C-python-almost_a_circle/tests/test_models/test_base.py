@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """unittest for class Base"""
-
-
 import unittest
 from base import Base
 
