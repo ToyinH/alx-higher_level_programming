@@ -14,3 +14,4 @@ def test_base(unittest.TestCase):
     self.assertEqual(b3.id, 10)
     b4 = Base()
     self.assertEqual(b4.id, 3)
+    self.assertEqual(Base.__init__().id, 4)
