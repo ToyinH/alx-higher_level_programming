@@ -2,7 +2,7 @@
 """
 class Rectangle that inherits from Base
 """
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -67,8 +67,36 @@ class Rectangle(Base):
         """
         self.__height = value
 
-    @setter 
-    
+    @property
+    def x(self):
+        """
+        The setter method for x
+
+        Returns:
+            int: returns x
+        """
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """
+        The setter method for x
+
+        Args:
+            value(int): the value of x
+        """
+        self.__x = x
+
+    @property
+    def y(self):
+        """
+        The getter method for y
+
+        Returns:
+            int: returns self.__y
+        """
+        return self.__y
+
 
 
 
