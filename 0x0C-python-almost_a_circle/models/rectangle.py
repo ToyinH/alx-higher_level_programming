@@ -22,6 +22,14 @@ class Rectangle(Base):
             id(int, optional): The ID of the Rectangle
         """
         super().__init__(id)
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
         self.__width = width
         self.__height = height
         self.__x = x
@@ -44,6 +52,8 @@ class Rectangle(Base):
 
         Value(int): the value of the width of the rectangle
         """
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
         self.__width = value
 
     @property
@@ -64,6 +74,8 @@ class Rectangle(Base):
         Args:
             value(int): The value of the height
         """
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
         self.__height = value
 
     @property
@@ -84,6 +96,8 @@ class Rectangle(Base):
         Args:
             value(int): the value of x
         """
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
         self.__x = x
 
     @property
@@ -95,6 +109,18 @@ class Rectangle(Base):
             int: returns self.__y
         """
         return self.__y
+
+    @y.setter
+    def y(self, value):
+        """
+        The setter method for y
+
+        args:
+            value(int): value for y
+        """
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
+        self.__y = value
 
 
 
