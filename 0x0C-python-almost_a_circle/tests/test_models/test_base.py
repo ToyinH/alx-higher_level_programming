@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """unittest for class Base"""
 import unittest
-from base import Base
+from models.base import Base
 
 
 def test_base(unittest.TestCase):
