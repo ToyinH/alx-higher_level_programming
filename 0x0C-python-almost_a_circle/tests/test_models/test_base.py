@@ -12,4 +12,7 @@ def test_base(unittest.TestCase):
     self.assertEqual(b1, 1)
     b2 = Base()
     self.assertEqual(b2, 2)
-
+    b3 = Base(10)
+    self.assertEqual(b3, 10)
+    b4 = Base()
+    self.assertEqual(b4, 3)
