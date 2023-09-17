@@ -4,16 +4,14 @@ class Rectangle that inherits from Base
 """
 from models.base import Base
 
+
 class Rectangle(Base):
     """
     class Rectangle that inherits from class Base
     """
-
-
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Class constructor
-        
         Args:
             width(int): The width of the rectangle
             height(int): The height of the rectangle.
@@ -42,12 +40,12 @@ class Rectangle(Base):
         self.__height = height
         self.__x = x
         self.__y = y
-    
+
     @property
     def width(self):
         """
         The getter method for width
-        
+
         Returns:
             int: The width of the rectangle
         """
@@ -64,7 +62,7 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        
+
         self.__width = value
 
     @property
@@ -89,7 +87,6 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
-        
         self.__height = value
 
     @property
@@ -114,8 +111,8 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
-        
-        self.__x = x
+
+        self.__x = value
 
     @property
     def y(self):
@@ -150,7 +147,7 @@ class Rectangle(Base):
             int: area is returned
         """
         return self.__width * self.__height
-    
+
     def display(self):
         """
         Public method that prints to stdout the
@@ -163,4 +160,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """the __str__ method"""
-        return("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height
+            )
+            )
