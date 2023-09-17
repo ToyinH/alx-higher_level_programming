@@ -8,7 +8,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """
         The class constructor
-        
+
         Args:
             size(int): the size of the Square
             x(int, optional): the x coordinate of Square
@@ -32,7 +32,7 @@ class Square(Rectangle):
     def size(self, value):
         """
         The setter method for size of Square
-        
+
         Args:
             value(int): value of size of square
         """
@@ -43,7 +43,7 @@ class Square(Rectangle):
         """
         The update method for arguments and keyword arguments
         for Square
-        
+
         Args:
             *args: arguments
             **kwargs: keyword arguments
