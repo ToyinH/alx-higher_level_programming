@@ -73,3 +73,17 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+        
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Class method that returns an instance with all attributes
+        already set
+
+        Args:
+            **dictionary: thought as a double pointer to a dictionary
+        """
+        dummy_instance = cls(1, 2)
+        dummy_instance.update(**dictionary)
+        return dummy_instance
+
