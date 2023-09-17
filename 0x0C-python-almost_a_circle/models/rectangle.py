@@ -168,7 +168,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """
         Method to update the class Rectangle
-        
+
         Args:
             *args: arguments. Assign an argument to each attribute
             **kwargs: keyword arguments. Must be skipped if *args
@@ -188,5 +188,3 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-
-
