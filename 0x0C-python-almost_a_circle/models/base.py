@@ -45,9 +45,31 @@ class Base:
             list_objs(list of instances): list of instances who inherits
             of Base example list of Rectangle or list of Square instances
         """
-        filename = cls.__name__ + ".json"
-        with open(filename, "w", encoding="utf") as file:
-            json_str = cls.to_json_string(
-                [obj.to_dictionary() for obj in list_objs]
-                )
-            file.write(json_str)
+        if list_objs is None:
+            list_objs = []
+        else:
+            filename = cls.__name__ + ".json"
+            with open(filename, "w", encoding="utf") as file:
+                json_str = cls.to_json_string(
+                    [obj.to_dictionary() for obj in list_objs]
+                    )   
+                file.write(json_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Static method that returns the list of the JSON string
+        representaton json_string
+        
+        Args:
+            json_string(string): a string representating a list of
+            dictionaries
+        
+        Returns:
+            if json_string is none or empty, return empty list
+            otherwise return the list represented by json_string
+        """
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
