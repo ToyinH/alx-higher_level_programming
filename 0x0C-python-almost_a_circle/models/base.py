@@ -23,10 +23,10 @@ class Base:
     def to_json_string(list_dictionaries):
         """static method that returns the JSON string
         representation of list_dictionaries
-        
+
         Args:
             list_dictionaries(list): list of dictionaries
-            
+
         Returns: returns the JSON string representation of
         list_dictionaries
         """
@@ -34,7 +34,7 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
-        
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -52,7 +52,7 @@ class Base:
             with open(filename, "w", encoding="utf") as file:
                 json_str = cls.to_json_string(
                     [obj.to_dictionary() for obj in list_objs]
-                    )   
+                    )
                 file.write(json_str)
 
     @staticmethod
@@ -60,11 +60,11 @@ class Base:
         """
         Static method that returns the list of the JSON string
         representaton json_string
-        
+
         Args:
             json_string(string): a string representating a list of
             dictionaries
-        
+
         Returns:
             if json_string is none or empty, return empty list
             otherwise return the list represented by json_string
@@ -73,7 +73,7 @@ class Base:
             return []
         else:
             return json.loads(json_string)
-        
+
     @classmethod
     def create(cls, **dictionary):
         """
@@ -87,3 +87,16 @@ class Base:
         dummy_instance.update(**dictionary)
         return dummy_instance
 
+    @classmethod
+    def load_from_file(cls):
+        """
+        class method that returns a list of instances
+        """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r", encoding="utf") as file:
+                json_str = file.read()
+                dict_list = json.loads(json_str)
+                return [cls.create(**obj_dict) for obj_dict in dict_list]
+        except FileNotFoundError:
+            return []
