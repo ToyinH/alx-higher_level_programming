@@ -23,4 +23,18 @@ class Square(Rectangle):
             self.id, self.x, self.y, self.width
         ))
 
-    
+    @property
+    def size(self):
+        """The public getter method for Square"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        The setter method for size of Square
+        
+        Args:
+            value(int): value of size of square
+        """
+        self.width = value
+        self.height = value
