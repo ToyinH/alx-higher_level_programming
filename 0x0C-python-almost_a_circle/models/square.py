@@ -65,7 +65,7 @@ class Square(Rectangle):
         """
         Public method that returns a dictionary
         representation of Square
-        
+
         Returns: return dictionary representation of Square
         """
         return {
