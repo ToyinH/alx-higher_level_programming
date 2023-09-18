@@ -96,7 +96,8 @@ class Base:
         try:
             with open(filename, "r", encoding="utf") as file:
                 json_str = file.read()
-                dict_list = json.loads(json_str)
+                dict_list = cls.from_json_string(json_str)
+                # dict_list = json.loads(json_str)
                 return [cls.create(**obj_dict) for obj_dict in dict_list]
         except FileNotFoundError:
             return []
