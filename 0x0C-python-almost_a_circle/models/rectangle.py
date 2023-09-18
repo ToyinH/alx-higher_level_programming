@@ -193,7 +193,7 @@ class Rectangle(Base):
         """
         Public method that returns the dictionary representation
         of Rectangle
-        
+
         Returns: returns the dictionary representation of Rectangle
         """
         return {
