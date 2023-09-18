@@ -100,3 +100,43 @@ class Base:
                 return [cls.create(**obj_dict) for obj_dict in dict_list]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        save to file in csv
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", encoding="utf-8") as file:
+            if cls.__name__ == "Rectangle":
+                file.write("id,width,height,x,y\n")
+            elif cls.__name__ == "Square":
+                file.write("id,size,x,y\n")
+
+            for obj in list_objs:
+                obj_data = [str(getattr(obj, attr)) for attr in obj.__dict__]
+                file.write(",".join(obj_data) + "\n")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """method that deserializes in csv"""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, mode='r', encoding='utf-8') as file:
+                if cls.__name__ == "Rectangle":
+                    attributes = file.readline().strip().split(",")
+                elif cls.__name__ == "Square":
+                    attributes = file.readline().strip().split(",")
+
+                instances = []
+
+                for line in file:
+                    data = line.strip().split(",")
+                    obj_data = {attr: int(value) for attr, value in zip(
+                        attributes, data
+                        )}
+                    instances.append(cls.create(**obj_data))
+
+                return instances
+        except FileNotFoundError:
+            return []
