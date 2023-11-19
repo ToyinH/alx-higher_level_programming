@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ list all states from the database """
 import MySQLdb
 import sys
@@ -14,7 +14,11 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT cities.id, cities.name, states.name FROM cities JOIN states ON cities.state_id = states.id ORDER BY cities.id ASC")
+    cursor.execute(
+        """SELECT cities.id, cities.name, states.name
+        FROM cities JOIN states ON cities.state_id = states.id
+        ORDER BY cities.id ASC"""
+        )
     rows = cursor.fetchall()
     for row in rows:
         print(row)
