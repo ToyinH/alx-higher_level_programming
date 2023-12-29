@@ -64,7 +64,7 @@ class Base:
                     [obj.to_dictionary() for obj in list_objs]
                 )
             file.write(json_string)
-            
+
     @staticmethod
     def from_json_string(json_string):
         """
