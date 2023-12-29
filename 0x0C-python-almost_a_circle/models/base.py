@@ -45,15 +45,26 @@ class Base:
             list_objs(list of instances): list of instances who inherits
             of Base example list of Rectangle or list of Square instances
         """
-        if list_objs is None:
-            list_objs = []
-        else:
-            filename = cls.__name__ + ".json"
-            with open(filename, "w", encoding="utf") as file:
-                json_str = cls.to_json_string(
-                    [obj.to_dictionary() for obj in list_objs]
-                    )
-                file.write(json_str)
+        # if list_objs is None:
+        #     list_objs = []
+        # else:
+        #     filename = cls.__name__ + ".json"
+        #     with open(filename, "w", encoding="utf") as file:
+        #         json_str = cls.to_json_string(
+        #             [obj.to_dictionary() for obj in list_objs]
+        #             )
+        #         file.write(json_str)
+
+        filename = cls.__name__ + ".json"
+        with open(filename, "w", encoding="utf-8") as file:
+            if list_objs is None:
+                json_string = cls.to_json_string(None)
+            else:
+                json_string = cls.to_json_string(
+                [obj.to_dictionary() for obj in list_objs]
+                )
+            file.write(json_string)
+
 
     @staticmethod
     def from_json_string(json_string):
