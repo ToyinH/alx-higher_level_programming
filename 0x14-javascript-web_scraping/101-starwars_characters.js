@@ -8,29 +8,36 @@
  * You must use the module request
  */
 
-const request = require('request');
+const request = require('request-promise');
 
 const movieId = process.argv[2];
 const url = 'https://swapi-api.alx-tools.com/api/films/' + movieId;
 
-request.get(url, (err, response, body) => {
-  if (err) {
-    console.log(err);
+async function fetchCharacterDetails (characterUrl) {
+  try {
+    const body = await request.get(characterUrl);
+    return JSON.parse(body);
+  } catch (error) {
+    console.error('Error fetching character details:', error);
+    return null;
   }
+}
 
-  const charactersList = JSON.parse(body).characters;
-  // console.log(charactersList);
+async function main () {
+  try {
+    const body = await request.get(url);
+    const charactersList = JSON.parse(body).characters;
 
-  const listSize = charactersList.length;
-
-  for (let index = 0; index < listSize; index++) {
-    request.get(charactersList[index], (err, response, body) => {
-      if (err) {
-        console.log(err);
-        return;
+    // Fetch and print character names in order
+    for (let index = 0; index < charactersList.length; index++) {
+      const characterDetails = await fetchCharacterDetails(charactersList[index]);
+      if (characterDetails !== null) {
+        console.log(characterDetails.name);
       }
-      const characterDetail = JSON.parse(body);
-      console.log(characterDetail.name);
-    });
+    }
+  } catch (error) {
+    console.error('Error:', error);
   }
-});
+}
+
+main();
