@@ -36,7 +36,10 @@ request.get(url, (err, response, body) => {
         count++;
       }
     } else {
-      newDict[String(id)] = count;
+      if (count !== 0) {
+        newDict[String(id)] = count;
+      }
+      
       if (list[index].completed === true) {
         count = 1;
       } else {
@@ -46,6 +49,8 @@ request.get(url, (err, response, body) => {
     }
   }
   const lastKey = list[listSize - 1].userId;
-  newDict[String(lastKey)] = count;
+  if (count !== 0) {
+    newDict[String(lastKey)] = count;
+  }
   console.log(newDict);
 });
