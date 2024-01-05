@@ -28,24 +28,24 @@ request.get(url, (err, response, body) => {
   // console.log(listSize);
 
   let count = 0;
-  let id = 1;
+  let trackId = 1;
 
   for (let index = 0; index < listSize; index++) {
-    if (list[index].userId === id) {
+    if (list[index].userId === trackId) {
       if (list[index].completed === true) {
         count++;
       }
     } else {
       if (count !== 0) {
-        newDict[String(id)] = count;
+        newDict[String(trackId)] = count;
       }
-      
+
       if (list[index].completed === true) {
         count = 1;
       } else {
         count = 0;
       }
-      id++;
+      trackId++;
     }
   }
   const lastKey = list[listSize - 1].userId;
