@@ -22,8 +22,12 @@ request.get(url, (err, response, body) => {
   }
 
   const list = JSON.parse(body);
-
   const listSize = list.length;
+
+  if (listSize === 0) {
+    console.log(newDict);
+    return;
+  }
   // console.log(list);
   // console.log(listSize);
 
