@@ -13,24 +13,14 @@ const url = process.argv[2];
 const filepath = process.argv[3];
 
 request.get(url, (err, response, body) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+
+  fs.writeFile(filepath, body, (err) => {
     if (err) {
-        console.log(err);
-        return;
+      console.log('error');
     }
-
-    // console.log(JSON.parse(body));
-    
-
-    // const data = JSON.parse(body);
-
-    fs.writeFile(filepath, body, (err) => {
-        if (err) {
-            console.log("error");
-            return;
-        }
-    }); 
-
+  });
 });
-
-
-
